@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "https://github.com/SlavaVdovchenko/proto/proto/auth;auth";
+
+service Authorisation {
+    rpc  Auth (Authrequest) returns (Authresponse);
+}
+
+message Authrequest {
+   string token = 1; // Auth token of the logged in userS
+}
+
+message Authresponse {
+    bool valid = 1; //Indicates whether the user is authorized
+}
+
